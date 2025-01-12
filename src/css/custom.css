@@ -1,0 +1,70 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  /* Light Theme - Material UI Inspired */
+  --ifm-color-primary: #1976d2; /* Material UI primary blue */
+  --ifm-color-primary-dark: #1565c0; /* Darker shade of primary blue */
+  --ifm-color-primary-darker: #0d47a1; /* Even darker shade */
+  --ifm-color-primary-darkest: #003c8f; /* Deep blue */
+  --ifm-color-primary-light: #42a5f5; /* Light blue */
+  --ifm-color-primary-lighter: #90caf9; /* Lighter blue */
+  --ifm-color-primary-lightest: #e3f2fd; /* Very light blue */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(
+    25,
+    118,
+    210,
+    0.1
+  ); /* Subtle blue highlight */
+}
+
+/* Dark Theme - Material UI Inspired */
+[data-theme="dark"] {
+  --ifm-color-primary: #2196f3; /* Material UI primary blue */
+  --ifm-color-primary-dark: #1976d2; /* Darker shade of primary blue */
+  --ifm-color-primary-darker: #1565c0; /* Even darker blue */
+  --ifm-color-primary-darkest: #0d47a1; /* Deep blue */
+  --ifm-color-primary-light: #42a5f5; /* Lighter blue */
+  --ifm-color-primary-lighter: #90caf9; /* Very light blue */
+  --ifm-color-primary-lightest: #bbdefb; /* Lightest blue */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(
+    33,
+    150,
+    243,
+    0.2
+  ); /* Light blue highlight for dark theme */
+  --ifm-background-color: #121212; /* Material dark background */
+  --ifm-color-text: #e0e0e0; /* Light gray text for dark theme */
+  --ifm-color-text-secondary: #b0bec5; /* Secondary text color */
+  --ifm-code-font-size: 95%;
+}
