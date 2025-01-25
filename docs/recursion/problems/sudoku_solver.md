@@ -1,13 +1,15 @@
+---
+sidebar_position: 3
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Sudoku Solver (Hard)
 
-## [Problem Link](https://leetcode.com/problems/sudoku-solver)
+_This page is about how to solve sudoku using recursion and backtracking._
 
----
-
-## Video
+### [Leetcode Problem Link](https://leetcode.com/problems/sudoku-solver)
 
 <iframe 
   width="560" 
@@ -17,8 +19,6 @@ import TabItem from '@theme/TabItem';
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
   allowfullscreen>
 </iframe>
-
----
 
 ## Explanation
 

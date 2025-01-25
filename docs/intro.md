@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Welcome to StaarCoding
+# Welcome to Sandeep decodes
 
-Welcome to **StaarCoding**! I'm Sandeep Amarnath, a Software Engineer based in Toronto, and this channel is dedicated to helping you master **coding and Data Structures & Algorithms (DSA)**, particularly for **interview preparation**.
+Welcome to **Sandeep decodes**! I'm Sandeep Amarnath, a Software Engineer based in Toronto, and this channel is dedicated to helping you master **coding and Data Structures & Algorithms (DSA)**, particularly for **interview preparation**.
 
 On this platform, you'll find tutorials, tips, and problem-solving strategies to help you excel at coding interviews and sharpen your technical skills.
 
@@ -12,7 +12,7 @@ On this platform, you'll find tutorials, tips, and problem-solving strategies to
 
 <img src="/img/profile_pic.jpg" alt="My Profile Picture" width="300" />
 
-I’m a passionate Software Engineer working in **Toronto**, and I specialize in **Full-Stack Development** and **System Design**. I started StaarCoding to share my knowledge and experiences with others, particularly those preparing for technical interviews in the software industry.
+I’m a passionate Software Engineer working in **Toronto**, and I specialize in **Full-Stack Development** and **System Design**. I started `Sandeep decodes` youtube channel to share my knowledge and experiences with others, particularly those preparing for technical interviews in the software industry.
 
 ### What you'll learn on this channel:
 
@@ -30,7 +30,7 @@ You can also check out my **[YouTube Channel](https://youtube.com/yourchannel)**
 
 I believe in learning **step by step**, or what I like to call, "baby steps." By breaking down complex concepts into smaller, manageable chunks, anyone can become a coding expert, regardless of their background.
 
-So, whether you’re a beginner or someone with more experience, **StaarCoding** is here to help you reach your coding goals!
+So, whether you’re a beginner or someone with more experience, **Sandeep decodes** is here to help you reach your coding goals!
 
 > **Note**: I have just started the channel and am currently in the process of recording content. Stay tuned for new videos and tutorials coming soon!
 
