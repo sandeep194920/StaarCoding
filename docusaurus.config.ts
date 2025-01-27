@@ -31,6 +31,10 @@ const config: Config = {
     locales: ["en"],
   },
 
+  customFields: {
+    APP_URL: process.env.URL,
+  },
+
   presets: [
     [
       "classic",
