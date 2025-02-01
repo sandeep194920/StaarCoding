@@ -15,22 +15,22 @@ _This page introduces multiple recursion concept with a fibonacci sequence examp
   allowfullscreen>
 </iframe>
 
-## Explanation
+---
 
-Multiple recursion occurs when solving a subproblem requires **solving multiple smaller subproblems**, each of which is solved recursively.
+Multiple recursion occurs when solving a subproblem requires **solving multiple smaller subproblems**, each of which is solved recursively. **Let's understand this by taking an example of Fibonacci series.**
 
-### Recursive Nature of Fibonacci series
+## Fibonacci Series - Recursive approach
+
+**Recursive Nature of Fibonacci series**
 
 In the Fibonacci sequence:
 
 To calculate `fib(n)`, we need the values of `fib(n-1)` and `fib(n-2)`.
 Each of these values further requires solving their own subproblems, forming a recursive tree structure, where subproblems branch out into smaller subproblems.
 
-#### Fibonacci Series
-
 The Fibonacci series looks like this: `0, 1, 1, 2, 3, 5, 8, 13, 21...`
 
-#### Key points:
+**Key points:**
 
 - The first two numbers are fixed: `Fib(0) = 0` and `Fib(1) = 1`.
 - These serve as the base cases because they don't require further recursion. If we call `fib(0)` or `fib(1)`, we can directly return `0` and `1`, respectively.
@@ -39,7 +39,7 @@ The Fibonacci series looks like this: `0, 1, 1, 2, 3, 5, 8, 13, 21...`
 
 Think of base conditions as the **"stopping point"** for recursion—they prevent infinite calls and provide a concrete result to build the solution upwards.
 
-### Example Code - Find fib(5) recursively
+### Find fib(5) recursively
 
 `Fib(5)` - To find `Fib(5)` we need to first find `Fib(4)` and `Fib(3)` and add them.
 
@@ -49,7 +49,7 @@ Similarly, to find `Fib(3)` we need to find `Fib(2)` and `Fib(1)` and add them. 
 
 Similarly, to find `Fib(2)` we need to add `Fib(1)` (known by base case) and `Fib(0)` (known by base case - known to be 0)
 
-#### Recursive Code
+### Recursive Code
 
 ```js
 function fib(n) {
@@ -69,7 +69,7 @@ function fib(n) {
 console.log(fib(5)); // gives you 5
 ```
 
-#### Recursive Tree
+### Recursive Tree
 
 ```scss
                         Fib(5)
@@ -144,32 +144,6 @@ fib(5) → fib(4) → fib(3) → fib(2) → fib(1)
 - The maximum depth of the call stack is equal to n for fib(n).
 - Therefore, `space complexity = O(n)`.
 
-### Example Code - Find fib(5) iteratively
-
-#### Iterative Code
-
-```js
-function fib(n) {
-  if (n === 0) return 0;
-  if (n === 1) return 1;
-
-  let prev1 = 1; // fib(1)
-  let prev2 = 0; // fib(0)
-  let current;
-
-  for (let i = 2; i <= n; i++) {
-    current = prev1 + prev2;
-    prev2 = prev1;
-    prev1 = current;
-  }
-
-  return current;
-}
-
-// Call for fib(5)
-console.log(fib(5)); // gives you 5
-```
-
 ### Room for Optimization of Time Complexity
 
 As we can see from the recursive call tree:
@@ -217,7 +191,41 @@ In the case of the Fibonacci series:
 
 We will dive deeper into dynamic programming in future topics, but for now, you can think of memoization as a simple form of dynamic programming. By caching previously computed values, we transform our solution from a brute-force recursive approach to a more efficient one.
 
+## Fibonacci Series - Iterative approach
+
+### Find fib(5) iteratively
+
+#### Iterative Code
+
+```js
+function fib(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
+  let prev1 = 1; // fib(1)
+  let prev2 = 0; // fib(0)
+  let current;
+
+  for (let i = 2; i <= n; i++) {
+    current = prev1 + prev2;
+    prev2 = prev1;
+    prev1 = current;
+  }
+
+  return current;
+}
+
+// Call for fib(5)
+console.log(fib(5)); // gives you 5
+```
+
 ### Time and Space for iterative approach
 
 - The loop runs approximately for n times (less than n as we are omitting 0 and 1), we can say the `Time complexity is approximately O(N)`
 - We are not using any extra space here, so the space is constant, `O(1)`
+
+---
+
+## Suggested problems to solve
+
+👉 "Check out these must-try problems to strengthen your understanding of recursion on arrays: [Recursion on Arrays](/docs/recursion/problems/recursion_on_arrays)."

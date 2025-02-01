@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # What is Recursion
 
-_This page introduces recursion with a factorial example, highlighting its definition, usage, and complexity._
+_This page introduces recursion using a factorial example, explaining its definition, applications, and complexity analysis._
 
 <iframe 
   width="560" 
@@ -15,9 +15,7 @@ _This page introduces recursion with a factorial example, highlighting its defin
   allowfullscreen>
 </iframe>
 
-## Explanation
-
-### Definition of Recursion
+## Definition of Recursion
 
 **Recursion** is doing something **similar every time** with **different inputs** until a certain scenario (called the base condition) is reached.
 
@@ -39,7 +37,7 @@ By observing that each function (subproblem) is similar to the others and also h
 
 ![alt text](image-3.png)
 
-### Loops vs Recursion
+## Loops vs Recursion
 
 A common question or confusion most students have is: when I can solve a problem using a loop, why should I use recursion?
 
@@ -49,7 +47,7 @@ Some problems are more intuitive to solve using recursion due to their structure
 
 Let's take an example of calculating factorial of a number.
 
-#### Factorial of a number
+### Factorial of a number
 
 The factorial of a number is the product of that number and all the positive integers less than it, down to 1.
 
@@ -82,7 +80,7 @@ We see that `4! = 4 x (3 x 2 x 1)` which is `4 x 3!`. This is the identification
 
 Writing recursive code for this looks like:
 
-##### Factorial in a recursive way
+#### Factorial in a recursive way
 
 ```js
 function factorialRecursive(n) {
@@ -129,23 +127,59 @@ function factorialIterative(n) {
 
 ---
 
-### Time and Space complexity of Recursion
+## Time and Space complexity of Recursion
 
-#### Time Complexity
+### Time Complexity
 
 The time complexity of a recursive function depends on **how many recursive calls are made** and the **operations performed in each call**.
 
 For example, in the factorial function, each recursive call performs one multiplication, and the total number of recursive calls is n. Therefore, the time complexity is O(n).
 
-#### Space Complexity
+### Space Complexity
 
-The space complexity of recursion can be viewed in two ways:
+The space complexity of a recursive function is the **auxiliary space**, which **includes the memory used by the call stack.**
 
-- **Auxiliary Space:** This is the extra space used by the algorithm, excluding the space required for recursion. It refers to any additional data structures or variables that the function might use.
+- **Auxiliary Space:** Auxiliary space refers to the extra space or temporary memory that an algorithm uses in addition to the input data. It does not include the space required to store the input itself.
 
-For example, if a function creates an array or an object to store intermediate results, it contributes to auxiliary space. For an iterative solution, this would typically be O(1) if no extra space is used.
+**Explanation in the Context of Recursion**
 
-- **Call Stack Space:** In recursion, each function call adds an entry to the call stack. The call stack stores information about the function calls, such as parameters, local variables, and the return address. The depth of the recursion determines how many function calls are stored in the call stack. For a factorial function, the depth of recursion is n, so the space complexity due to the call stack is O(n).
+When you make a recursive function call, each call gets its own stack frame (a separate block of memory to store function variables and return addresses). This stack space is an additional memory requirement, which is why recursion often leads to O(n) auxiliary space for a function that makes n recursive calls.
+
+Consider the below example:
+
+```js
+function recursive(int n) {
+    if (n == 0) return;
+    recursive(n - 1);  // Recursive call
+}
+
+recursive(5);
+```
+
+**Stack frames when calling func(5):**
+
+```
+func(5) → Calls func(4), waiting for it to return
+func(4) → Calls func(3), waiting for it to return
+func(3) → Calls func(2), waiting for it to return
+func(2) → Calls func(1), waiting for it to return
+func(1) → Calls func(0), waiting for it to return
+func(0) → Returns (base case reached)
+```
+
+Each of these function calls stays in the call stack until the base case is reached, leading to **`O(n)` auxiliary space.**
+
+**Call Stack Space:** is just a specific part of auxiliary space related to recursion.
+
+In recursive functions, the stack frames consume `O(n)` space if `n` calls are stored in the stack.
+
+This is a subset of the total auxiliary space.
+
+In short, **Auxiliary space** is the total space taken by recursion which includes **Call stack space**.
+
+```
+Auxiliary space = Any space taken by datastructure (like arrays, hash maps, etc.) + call stack space (due to recursion)
+```
 
 **Example (Factorial Problem)**
 
