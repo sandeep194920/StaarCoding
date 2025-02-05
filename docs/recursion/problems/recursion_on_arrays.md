@@ -66,6 +66,9 @@ const sumOfAll = (arr) => {
 
   const newArr = arr.slice(1); // arr.slice creates a new array from defined index until end of the array
 
+  // Note: Instead of doing arr[0] and then arr.slice(1), we can do arr.shift() as
+  // shown in the example of 'Array Reverse' problem below.
+
   return arr[0] + sumOfAll(newArr);
 };
 
@@ -120,7 +123,77 @@ Try to find product of all elements of array using iterative and recursive appro
 
 ---
 
-## 2. Array Reverse
+## 2. Find Maximum Element in Array
+
+**Problem statement**
+
+```
+arr = [10, -20, 300, 40]
+
+Find the maximum element of the arr
+```
+
+### Iterative approach
+
+```js
+const findMax = (arr) => {
+  let maxEl = -Infinity;
+
+  for (const ch of arr) {
+    maxEl = Math.max(maxEl, ch);
+  }
+  return maxEl;
+};
+
+console.log(findMax(arr)); // 300
+```
+
+**Time Complexity** - **`O(n)`**
+
+`O(n)` → Since we iterate through the array once.
+
+**Space Complexity** - **`O(1)`**
+
+`O(1)` → We use only a single variable (maxEl), so space usage is constant.
+
+### Recursive approach
+
+```js
+const findMax = (arr, index = 0) => {
+  if (arr.length === 0) return null; // Guard condition - Explicit check for empty array
+
+  if (index === arr.length) return -Infinity; // Base case for recursion
+
+  return Math.max(arr[index], findMax(arr, index + 1));
+};
+
+console.log(findMax(arr)); // 300
+console.log(findMax([])); // -Infinity (natural behavior for empty lists)
+```
+
+**Time complexity** - **`O(n)`**
+
+- There are `n` elements in the array, and each recursive call processes one element.
+
+- Since we only do one recursive call at a time, the total number of calls is `n`.
+
+- So, time complexity is `O(n)`.
+
+**Space complexity** - **`O(n)`**
+
+- The recursion depth reaches `n` (each function call is stored in the call stack).
+
+- Since each call has its own stack frame, we use `O(n)` [auxiliary space](/docs/recursion/concept/what-is-recursion#space-complexity).
+
+- So, space complexity is `O(n)`.
+
+### 🔥 Challenge
+
+Try to find minimum element in the array using using iterative and recursive approaches.
+
+---
+
+## 3. Array Reverse
 
 **Problem statement**
 
@@ -162,6 +235,10 @@ const reverseArr = (arr) => {
 
   const firstElement = arr.shift();
   reverseArr(arr);
+
+  // Note: The other option here would be to use arr[0] and arr.slice(1)
+  // as shown in first problem (Sum of array elements) above.
+
   arr.push(firstElement);
   return arr;
 };
@@ -189,6 +266,10 @@ _without shift operation - Storing the result in new array_
 
 ```js
 const reverseArr = (arr, index = 0) => {
+  if (arr.length === 0) {
+    return [];
+  }
+
   if (index === arr.length - 1) {
     return [arr[index]];
   }
@@ -197,6 +278,12 @@ const reverseArr = (arr, index = 0) => {
   reversedArr.push(arr[index]);
   return reversedArr;
 };
+
+const res = reverseArr(arr);
+console.log(res); // [40, 30, 20, 10]
+
+const res = reverseArr([]); // for an empty array
+console.log(res); // []
 ```
 
 **Time complexity** - **`O(n)`**
@@ -214,74 +301,6 @@ const reverseArr = (arr, index = 0) => {
 - Since each call has its own stack frame, we use `O(n)` [auxiliary space](/docs/recursion/concept/what-is-recursion#space-complexity).
 
 - So, space complexity is `O(n)`.
-
----
-
-## 3. Find Maximum Element in Array
-
-**Problem statement**
-
-```
-arr = [10, -20, 300, 40]
-
-Find the maximum element of the arr
-```
-
-### Iterative approach
-
-```js
-const findMax = (arr) => {
-  let maxEl = -Infinity;
-
-  for (const ch of arr) {
-    maxEl = Math.max(maxEl, ch);
-  }
-  return maxEl;
-};
-
-console.log(findMax(arr)); // 300
-```
-
-**Time Complexity** - **`O(n)`**
-
-`O(n)` → Since we iterate through the array once.
-
-**Space Complexity** - **`O(1)`**
-
-`O(1)` → We use only a single variable (maxEl), so space usage is constant.
-
-### Recursive approach
-
-```js
-const findMax = (arr, index = 0) => {
-  if (index === arr.length) return -Infinity; // Base case for empty array
-
-  return Math.max(arr[index], findMax(arr, index + 1));
-};
-
-console.log(findMax(arr)); // 300
-console.log(findMax([])); // -Infinity (natural behavior for empty lists)
-```
-
-**Time complexity** - **`O(n)`**
-
-- There are `n` elements in the array, and each recursive call processes one element.
-
-- Since we only do one recursive call at a time, the total number of calls is `n`.
-
-- So, time complexity is `O(n)`.
-
-**Space complexity** - **`O(n)`**
-
-- The recursion depth reaches `n` (each function call is stored in the call stack).
-
-- Since each call has its own stack frame, we use `O(n)` [auxiliary space](/docs/recursion/concept/what-is-recursion#space-complexity).
-
-- So, space complexity is `O(n)`.
-
-### 🔥 Challenge
-
-Try to find minimum element in the array using using iterative and recursive approaches.
 
 ---
 
@@ -428,6 +447,27 @@ const findOccurances = (arr, el, index = 0) => {
 };
 
 console.log(findOccurances([1, 2, 3, 2, 2, 4], 2)); // 3
+```
+
+This can also be written using normal `if-else` condition
+
+```js
+const findOccurrences = (arr, el, index = 0) => {
+  if (index === arr.length) {
+    return 0;
+  }
+
+  let count = 0;
+  if (arr[index] === el) {
+    count = 1;
+  }
+
+  count += findOccurrences(arr, el, index + 1);
+
+  return count;
+};
+
+console.log(findOccurrences([1, 2, 3, 2, 2, 4], 2)); // 3
 ```
 
 **Time complexity** - **`O(n)`**
