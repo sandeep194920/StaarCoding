@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Multiple recursive calls
+# Multiple Recursive Calls
 
 _This page introduces multiple recursion concept with a fibonacci sequence example, highlighting its definition, usage, and complexity._
 
