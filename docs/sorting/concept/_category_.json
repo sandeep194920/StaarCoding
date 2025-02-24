@@ -1,0 +1,8 @@
+{
+  "label": "Concept",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Sorting is a fundamental concept in computer science, forming the backbone of efficient data processing. In this section, we explore various sorting techniques, analyzing their time and space complexities to understand their strengths and trade-offs. We classify sorting algorithms into iterative and recursive approaches, breaking down their working principles and best-use cases. Through in-depth comparisons, we highlight how different sorting methods perform under various conditions, helping you develop an intuitive understanding of when and why to choose a particular algorithm. By connecting theoretical concepts to practical implementation, we ensure you gain a clear and structured grasp of sorting, making algorithm selection and optimization second nature."
+  }
+}

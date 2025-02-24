@@ -1,6 +1,6 @@
 {
-  "label": "Recursion",
-  "position": 3,
+  "label": "Problems",
+  "position": 1,
   "link": {
     "type": "generated-index",
     "description": "I teach recursion by focusing on patterns and a detailed analysis of each problem. What sets my approach apart is how I seamlessly connect concepts to code. As I write the solution, I explain how each part of the code directly ties back to the theory we're discussing. This step-by-step, concept-driven methodology not only simplifies complex recursion problems but also helps you clearly visualize how recursion unfolds in action. By linking the \"why\" behind the concept to the \"how\" in the implementation, I ensure you gain a deep understanding of recursion, making it easier to solve challenging problems with confidence and clarity."
